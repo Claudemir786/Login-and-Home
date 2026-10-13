@@ -1,0 +1,127 @@
+
+/* Remove os espaçamentos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+}
+
+/* Container principal */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    /* Centraliza o card na tela */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Área do título */
+.divTitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    color: #243b55;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Formulário */
+.divForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cada campo do formulário */
+.divForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Texto dos campos */
+.divForm label span {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Inputs */
+.divForm input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Quando o usuário seleciona um input */
+.divForm input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #ffffff;
+}
+
+/* Botão */
+.divForm button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 5px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.divForm button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Efeito ao clicar */
+.divForm button:active {
+    transform: translateY(0);
+}
+
+/* Mensagens de erro */
+.divForm form p {
+    color: #dc2626;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 32px);
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+}

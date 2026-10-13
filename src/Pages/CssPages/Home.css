@@ -1,0 +1,158 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #141e30;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.Container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* Título da página */
+.Container h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+/* Lista de livros */
+.Container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 25px;
+    list-style: none;
+}
+
+/* Card individual */
+.Container li {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0;
+}
+
+/* Efeito ao passar o mouse no card */
+.Container li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Título de cada livro */
+.Container li p {
+    color: #243b55;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Capa do livro */
+.Container li img {
+    display: block;
+    width: 100%;
+    max-width: 170px;
+    height: 240px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #f3f4f6;
+}
+
+/* Mensagem de erro */
+.Container .Error {
+    color: #f87171;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Ícone de carregamento */
+.Container svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #60a5fa;
+    margin: 40px auto;
+}
+
+/* Animação do carregamento */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .Container {
+        padding: 30px 20px;
+    }
+
+    .Container h1 {
+        font-size: 27px;
+        margin-bottom: 25px;
+    }
+
+    .Container ul {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 18px;
+    }
+
+    .Container li img {
+        height: 210px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .Container {
+        padding: 25px 15px;
+    }
+
+    .Container h1 {
+        font-size: 24px;
+    }
+
+    .Container ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .Container li {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .Container li p {
+        font-size: 13px;
+    }
+
+    .Container li img {
+        height: 180px;
+    }
+}
